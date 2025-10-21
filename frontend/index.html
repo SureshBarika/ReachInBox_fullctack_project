@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReachInbox - AI Email Onebox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 ReachInbox AI Email Onebox</h1>
+            <p>Real-time email synchronization with AI-powered categorization</p>
+        </header>
+
+        <div class="controls">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search emails...">
+                <button id="searchBtn">🔍 Search</button>
+            </div>
+
+            <div class="filters">
+                <select id="accountFilter">
+                    <option value="">All Accounts</option>
+                </select>
+
+                <select id="folderFilter">
+                    <option value="">All Folders</option>
+                    <option value="INBOX">Inbox</option>
+                    <option value="Sent">Sent</option>
+                </select>
+
+                <select id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Interested">Interested</option>
+                    <option value="Meeting Booked">Meeting Booked</option>
+                    <option value="Not Interested">Not Interested</option>
+                    <option value="Spam">Spam</option>
+                    <option value="Out of Office">Out of Office</option>
+                    <option value="Uncategorized">Uncategorized</option>
+                </select>
+
+                <button id="refreshBtn">🔄 Refresh</button>
+            </div>
+        </div>
+
+        <div class="email-list" id="emailList">
+            <div class="loading">Loading emails...</div>
+        </div>
+
+        <div class="pagination">
+            <button id="prevBtn" disabled>← Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextBtn">Next →</button>
+        </div>
+    </div>
+
+    <!-- Email Detail Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="emailDetail"></div>
+            <div class="modal-actions">
+                <button id="suggestReplyBtn">✨ Suggest Reply (RAG)</button>
+            </div>
+            <div id="suggestedReply" class="suggested-reply"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
